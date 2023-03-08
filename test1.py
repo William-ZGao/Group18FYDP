@@ -1,5 +1,5 @@
 import time
-from gpiozero import LED, DigitalInputDevice
+from gpiozero import LED, InputDevice
 
 led = LED(4)
 led.on()
@@ -8,11 +8,11 @@ time.sleep(1)
 led.off()
 print("LED off!")
 
-lsr = DigitalInputDevice(27)
+lsr = InputDevice(27)
 start = time.time()
 while (time.time() - start) < 10:
     print(str(lsr.value))
-    if lsr.value > 0:
+    if lsr.value < 1:
         print("light!")
         led.on()
     else:
