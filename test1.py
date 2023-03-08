@@ -9,9 +9,9 @@ led.off()
 print("LED off!")
 
 lsr = LightSensor(27)
-start = time.time();
+start = time.time()
 while (time.time() - start) > 10:
-    bright = lsr.value;
+    bright = lsr.value
     print(str(bright))
     if bright == 1:
         led.on()
